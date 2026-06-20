@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMCode - Portfolio</title>
+  <meta name="description" content="Ένα κεντρικό hub με όλες τις εφαρμογές μου: Android, iOS και PWA. Περιηγηθείτε και κατεβάστε τις πιο πρόσφατες εκδόσεις.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Dynamic Background Gradients -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <img src="logo.png" alt="DMCode Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <h1>DMCode</h1>
+          <p>Το προσωπικό μου ψηφιακό portfolio</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="https://ko-fi.com/dmcode" target="_blank" rel="noopener noreferrer" class="kofi-btn" aria-label="Support me on Ko-fi">
+          <svg class="kofi-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-2.669.029-3.414-.014-3.414-.014s-.002-.121-.002-.121l-.005-4.694s.701-.012 3.111-.012c1.737 0 2.548.813 2.583 2.218.035 1.39-1.229 2.61-2.273 2.623z"/>
+          </svg>
+          <span class="kofi-text">Support</span>
+        </a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Αλλαγή Θέματος" title="Αλλαγή Θέματος">
+          <!-- Sun Icon -->
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon -->
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Featured Apps Carousel -->
+    <section class="carousel-section" aria-label="Επιλεγμένες Εφαρμογές">
+      <div class="section-header">
+        <h2 class="section-title">Επιλεγμένες Εφαρμογές</h2>
+      </div>
+      
+      <div class="carousel-container">
+        <!-- Navigation Buttons -->
+        <button class="carousel-btn prev-btn" aria-label="Προηγούμενη εφαρμογή">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        
+        <button class="carousel-btn next-btn" aria-label="Επόμενη εφαρμογή">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Slides Wrapper -->
+        <div class="carousel-track-container">
+          <div class="carousel-track" id="carousel-track">
+            <!-- Dynamic slides will be inserted here by main.js -->
+          </div>
+        </div>
+
+        <!-- Indicators -->
+        <div class="carousel-nav" id="carousel-nav">
+          <!-- Dynamic indicator dots will be inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="gallery-section">
+      <div class="gallery-header-bar">
+        <h2 class="section-title">Όλες οι Εφαρμογές</h2>
+        
+        <!-- Filter Controls -->
+        <div class="filter-controls" role="tablist" aria-label="Φιλτράρισμα εφαρμογών">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Όλες</button>
+          <button class="filter-btn" data-filter="android" role="tab" aria-selected="false">
+            <span class="icon-android">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0004.5511-.4482.9997-.9993.9997zm-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5515 0 .9997.4482.9997.9993 0 .5511-.4482.9997-.9997.9997zm11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1521-.5676.416.416 0 0 0-.5676.1521l-2.0223 3.503C15.5902 8.244 13.8533 7.85 12 7.85s-3.5902.394-5.1367 1.1004L4.841 5.4475a.416.416 0 0 0-.5676-.1521.416.416 0 0 0-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3436-4.1021-2.6892-7.5743-6.1185-9.4396z"/>
+              </svg>
+            </span> Android
+          </button>
+          <button class="filter-btn" data-filter="ios" role="tab" aria-selected="false">
+            <span class="icon-ios">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z"/>
+              </svg>
+            </span> iOS
+          </button>
+          <button class="filter-btn" data-filter="pwa" role="tab" aria-selected="false">
+            <span class="icon-pwa">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.09 13.36 4 12.69 4 12s.09-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm1.02 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.17.64.26 1.31.26 2s-.09 1.36-.26 2h-3.38z"/>
+              </svg>
+            </span> PWA
+          </button>
+        </div>
+      </div>
+
+      <!-- Grid Layout for Gallery -->
+      <div class="apps-grid" id="apps-grid">
+        <!-- Dynamic app cards will be inserted here by main.js -->
+      </div>
+    </section>
+
+    <!-- YouTube Spotlight Section -->
+    <section class="youtube-section" aria-label="YouTube Channel">
+      <div class="section-header">
+        <h2 class="section-title">Κανάλι YouTube</h2>
+      </div>
+      <div class="youtube-banner">
+        <div class="youtube-logo-area">
+          <div class="youtube-play-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="youtube-info">
+          <h3>Σύγχρονο Γεροντικό</h3>
+          <p class="youtube-desc">Αποσπάσματα από ομιλίες του Μητροπολίτου Λεμεσού κ. Αθανασίου, με θέμα τη ζωή, τις εμπειρίες και τις διδαχές σύγχρονων Αγίων και Γερόντων της Εκκλησίας.</p>
+          <a href="https://www.youtube.com/@SygxronoGerontiko" target="_blank" rel="noopener noreferrer" class="youtube-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            Εγγραφή στο Κανάλι
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Δημήτρης Μερσεντζής. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="main.js" defer></script>
+</body>
+</html>
