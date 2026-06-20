@@ -886,6 +886,19 @@ html.dark .moon-icon {
     font-size: 0.75rem;
   }
   
+  .kofi-text {
+    display: none;
+  }
+  
+  .kofi-btn {
+    padding: 0.6rem;
+    border-radius: 50%;
+  }
+  
+  .header-actions {
+    gap: 0.5rem;
+  }
+  
   .main-content {
     padding: 1.5rem 1rem;
     gap: 2.5rem;
@@ -896,13 +909,69 @@ html.dark .moon-icon {
   }
   
   .carousel-track-container {
-    height: 420px;
+    height: 280px; /* Increased from 260px to accommodate 2-line titles */
   }
   
   .carousel-slide {
     max-width: 90%;
     padding: 1.25rem;
-    height: 360px;
+    height: 220px; /* Increased from 200px to accommodate 2-line titles */
+  }
+  
+  .slide-title-area h3 {
+    font-size: 1.15rem; /* Slightly smaller on mobile to help fit long titles */
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Max 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .carousel-slide .slide-header {
+    align-items: flex-start; /* Align logo to the top */
+  }
+  
+  .carousel-slide .slide-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2.2rem;
+  }
+  
+  /* Convert chips into icon-only pills to save space */
+  .carousel-slide .slide-badge {
+    font-size: 0;
+    padding: 0.4rem;
+    border-radius: 50%;
+    min-width: 0;
+    gap: 0;
+  }
+  
+  .carousel-slide .slide-badge svg {
+    margin: 0;
+  }
+  
+  /* Hide text when there are 2+ buttons in the carousel to make them sit nicely side-by-side */
+  .carousel-slide .card-actions-wrapper {
+    flex-wrap: nowrap;
+  }
+  
+  .carousel-slide .slide-action-btn:first-child:nth-last-child(n+2),
+  .carousel-slide .slide-action-btn:first-child:nth-last-child(n+2) ~ .slide-action-btn {
+    font-size: 0;
+    min-width: 0;
+    padding: 0.6rem;
+    gap: 0;
+  }
+  
+  .carousel-slide .slide-action-btn:first-child:nth-last-child(n+2) .btn-icon,
+  .carousel-slide .slide-action-btn:first-child:nth-last-child(n+2) ~ .slide-action-btn .btn-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  /* Hide the description text inside the carousel for a cleaner, compact mobile view */
+  .carousel-slide .slide-body {
+    display: none;
   }
   
   .carousel-slide.prev {
