@@ -926,17 +926,24 @@ html.dark .moon-icon {
     padding: 1rem 0;
     margin-left: -1rem;
     margin-right: -1rem;
-    width: calc(100% + 2rem);
+    width: auto; /* Use auto width to prevent subpixel layout overflow in Chromium/Android */
+    overflow: hidden;
   }
   
   .carousel-track-container {
     height: 220px;
+    overflow: hidden; /* Clip horizontal overflow at the track level */
   }
   
   .carousel-slide {
     max-width: 90%;
     padding: 1.25rem;
     height: 170px;
+  }
+  
+  .carousel-slide.hidden-left,
+  .carousel-slide.hidden-right {
+    display: none;
   }
   
   .slide-title-area h3 {
