@@ -927,18 +927,20 @@ html.dark .moon-icon {
     overflow: hidden;
   }
   
-  .carousel-slide .slide-header {
+  .carousel-slide .slide-header,
+  .card-header {
     align-items: flex-start; /* Align logo to the top */
   }
   
-  .carousel-slide .slide-icon {
+  .carousel-slide .slide-icon,
+  .card-icon {
     width: 50px;
     height: 50px;
     font-size: 2.2rem;
   }
   
   /* Convert chips into icon-only pills to save space */
-  .carousel-slide .slide-badge {
+  .slide-badge {
     font-size: 0;
     padding: 0.4rem;
     border-radius: 50%;
@@ -946,25 +948,25 @@ html.dark .moon-icon {
     gap: 0;
   }
   
-  .carousel-slide .slide-badge svg {
+  .slide-badge svg {
     margin: 0;
   }
   
-  /* Hide text when there are 2+ buttons in the carousel to make them sit nicely side-by-side */
-  .carousel-slide .card-actions-wrapper {
+  /* Hide text when there are 2+ buttons to make them sit nicely side-by-side */
+  .card-actions-wrapper {
     flex-wrap: nowrap;
   }
   
-  .carousel-slide .slide-action-btn:first-child:nth-last-child(n+2),
-  .carousel-slide .slide-action-btn:first-child:nth-last-child(n+2) ~ .slide-action-btn {
+  .slide-action-btn:first-child:nth-last-child(n+2),
+  .slide-action-btn:first-child:nth-last-child(n+2) ~ .slide-action-btn {
     font-size: 0;
     min-width: 0;
     padding: 0.6rem;
     gap: 0;
   }
   
-  .carousel-slide .slide-action-btn:first-child:nth-last-child(n+2) .btn-icon,
-  .carousel-slide .slide-action-btn:first-child:nth-last-child(n+2) ~ .slide-action-btn .btn-icon {
+  .slide-action-btn:first-child:nth-last-child(n+2) .btn-icon,
+  .slide-action-btn:first-child:nth-last-child(n+2) ~ .slide-action-btn .btn-icon {
     width: 22px;
     height: 22px;
   }
@@ -990,22 +992,65 @@ html.dark .moon-icon {
     height: 40px;
   }
 
+  .section-title {
+    font-size: 1.4rem; /* Reduced size on mobile */
+  }
+
   .gallery-header-bar {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Left-align to match Carousel title */
+    gap: 1rem;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Apps Grid - single column on mobile to prevent overflow */
+  .apps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .filter-controls {
     width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     white-space: nowrap;
     justify-content: flex-start;
-    padding: 0.3rem;
+    padding: 0.3rem 0;
+    /* Hide scrollbar visually but keep functionality */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .filter-controls::-webkit-scrollbar {
+    display: none;
   }
 
   .filter-btn {
-    padding: 0.4rem 1rem;
+    padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Make platform filters icon-only circles on mobile with proper touch target size */
+  .filter-controls .filter-btn:not([data-filter="all"]) {
+    font-size: 0;
+    padding: 0.6rem;
+    border-radius: 50%;
+    min-width: 44px;
+    height: 44px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .filter-controls .filter-btn:not([data-filter="all"]) span {
+    margin: 0;
+    display: flex;
   }
 }
 

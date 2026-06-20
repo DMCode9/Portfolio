@@ -311,6 +311,7 @@ function setupCarousel() {
     resetAutoplay();
   });
 
+  setupSwipeSupport();
   updateCarousel();
 }
 
@@ -341,6 +342,39 @@ function updateCarousel() {
   indicators.forEach((indicator, idx) => {
     indicator.classList.toggle('active', idx === currentSlideIndex);
   });
+}
+
+// --- Swipe Support for Carousel ---
+function setupSwipeSupport() {
+  const container = document.querySelector('.carousel-container');
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  container.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  
+  container.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+  
+  function handleSwipe() {
+    const swipeThreshold = 50; // Minimum swipe distance in pixels
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swiped left -> Next slide
+        currentSlideIndex = (currentSlideIndex + 1) % featuredApps.length;
+      } else {
+        // Swiped right -> Previous slide
+        currentSlideIndex = (currentSlideIndex - 1 + featuredApps.length) % featuredApps.length;
+      }
+      updateCarousel();
+      resetAutoplay();
+    }
+  }
 }
 
 // --- Autoplay Carousel ---
