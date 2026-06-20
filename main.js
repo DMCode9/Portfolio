@@ -348,23 +348,31 @@ function updateCarousel() {
 function setupSwipeSupport() {
   const container = document.querySelector('.carousel-container');
   let touchStartX = 0;
+  let touchStartY = 0;
   let touchEndX = 0;
+  let touchEndY = 0;
   
   container.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
+    touchStartX = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
   }, { passive: true });
   
   container.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
+    touchEndX = e.changedTouches[0].clientX;
+    touchEndY = e.changedTouches[0].clientY;
     handleSwipe();
   }, { passive: true });
   
   function handleSwipe() {
-    const swipeThreshold = 50; // Minimum swipe distance in pixels
-    const diff = touchStartX - touchEndX;
+    const swipeThreshold = 50; // Minimum horizontal distance in pixels
+    const verticalThreshold = 30; // Maximum vertical distance to prevent scroll-interference
     
-    if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
+    const diffX = touchStartX - touchEndX;
+    const diffY = touchStartY - touchEndY;
+    
+    // Only trigger slide transition if horizontal swipe is prominent and vertical drag is minimal
+    if (Math.abs(diffX) > swipeThreshold && Math.abs(diffY) < verticalThreshold) {
+      if (diffX > 0) {
         // Swiped left -> Next slide
         currentSlideIndex = (currentSlideIndex + 1) % featuredApps.length;
       } else {
